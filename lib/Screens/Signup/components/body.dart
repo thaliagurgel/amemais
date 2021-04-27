@@ -1,3 +1,4 @@
+import 'package:amemais/components/rounded_password_field_repeat.dart';
 import 'package:flutter/material.dart';
 import 'package:amemais/Screens/Login/login_screen.dart';
 import 'package:amemais/Screens/Signup/components/background.dart';
@@ -44,6 +45,9 @@ class Body extends StatelessWidget {
               onChanged: (value) {},
             ),
             RoundedPasswordField(
+              onChanged: (value) {},
+            ),
+            RoundedPasswordFieldRepeat(
               onChanged: (value) {},
             ),
             RoundedButton(
