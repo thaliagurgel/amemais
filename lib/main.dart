@@ -1,8 +1,9 @@
+import 'package:amemais/routes.dart';
+import 'package:amemais/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:amemais/Screens/Welcome/welcome_screen.dart';
-import 'package:amemais/constants.dart';
-
-import 'constants.dart';
+// import 'package:amemais/constants.dart';
+// import 'constants.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,14 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ame+',
-      theme: ThemeData(
-        primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: AmeMaisColors.branco,
-        fontFamily: "Muli",
-        textTheme: TextTheme(bodyText1: TextStyle(color: AmeMaisColors.branco)),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: WelcomeScreen(),
+      theme: theme(),
+      // home: WelcomeScreen(),
+      initialRoute: WelcomeScreen.routeName,
+      routes: routes,
     );
   }
 }

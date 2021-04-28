@@ -1,3 +1,5 @@
+import 'package:amemais/Screens/Login/components/social_icon.dart';
+import 'package:amemais/Screens/forgot_password/forgot_password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:amemais/Screens/Login/components/background.dart';
 import 'package:amemais/Screens/Signup/signup_screen.dart';
@@ -8,6 +10,7 @@ import 'package:amemais/components/rounded_password_field.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../constants.dart';
+import 'or_divider.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -39,17 +42,36 @@ class Body extends StatelessWidget {
             // ),
             SizedBox(height: size.height * 0.03),
             RoundedInputField(
-              hintText: "Seu Email",
+              hintText: "Digite Seu Email",
               onChanged: (value) {},
             ),
             RoundedPasswordField(
               onChanged: (value) {},
             ),
+            Row(
+              children: [
+                Checkbox(
+                  value: false,
+                  onChanged: (value) {},
+                ),
+                Text("Lembrar-me"),
+                Spacer(),
+                GestureDetector(
+                    onTap: () => Navigator.pushNamed(
+                        context, ForgotPasswordScreen.routeName),
+                    child: Text(
+                      "Esqueci minha senha",
+                      style: TextStyle(decoration: TextDecoration.underline),
+                    ))
+              ],
+            ),
+
             RoundedButton(
               text: "Login",
               press: () {},
             ),
-            SizedBox(height: size.height * 0.03),
+
+            SizedBox(height: size.height * 0.04),
             AlreadyHaveAnAccountCheck(
               press: () {
                 Navigator.push(
@@ -62,6 +84,20 @@ class Body extends StatelessWidget {
                 );
               },
             ),
+            OrDivider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SocalIcon(
+                  iconSrc: "assets/icons/facebook.svg",
+                  press: () {},
+                ),
+                SocalIcon(
+                  iconSrc: "assets/icons/google-plus.svg",
+                  press: () {},
+                ),
+              ],
+            )
           ],
         ),
       ),
