@@ -27,6 +27,7 @@ const String kMatchPassError = "Senhas não estão iguais";
 const String kNamelNullError = "Por favor, digite seu nome";
 const String kPhoneNumberNullError = "Por favor, digite seu telefone";
 const String kAddressNullError = "Por favor, digite seu e-mail";
+const String kIdadeError = "Por favor, digite sua idade";
 
 final headingStyle = TextStyle(
   fontSize: getProportionateScreenWidth(28),
