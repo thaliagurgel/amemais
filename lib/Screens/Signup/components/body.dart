@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:amemais/constants.dart';
+import 'package:amemais/size_config.dart';
 import 'package:amemais/components/rounded_password_field_repeat.dart';
 import 'package:flutter/material.dart';
 import 'package:amemais/Screens/Login/login_screen.dart';
@@ -8,81 +11,83 @@ import 'package:amemais/components/already_have_an_account_acheck.dart';
 import 'package:amemais/components/rounded_button.dart';
 import 'package:amemais/components/rounded_input_field.dart';
 import 'package:amemais/components/rounded_password_field.dart';
+import 'package:amemais/components/default_button.dart';
+import 'package:amemais/components/form_error.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../../constants.dart';
+import 'sign_up_form.dart';
 
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Background(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              "Cadastre-se",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold, color: AmeMaisColors.rosa),
-            ),
-            SizedBox(height: size.height * 0.03),
-            Container(
-              width: 200,
-              height: 200,
-              child: Image.asset('assets/images/ame_icon.png'),
-            ),
-            // SvgPicture.asset(
-            //   "assets/icons/signup.svg",
-            //   height: size.height * 0.35,
-            // ),
-            RoundedInputField(
-              hintText: "Seu E-mail",
-              onChanged: (value) {},
-            ),
-            RoundedInputField(
-              hintText: "Seu Nome",
-              onChanged: (value) {},
-            ),
-            RoundedPasswordField(
-              onChanged: (value) {},
-            ),
-            RoundedPasswordFieldRepeat(
-              onChanged: (value) {},
-            ),
-            RoundedButton(
-              text: "Cadastrar",
-              press: () {},
-            ),
-            SizedBox(height: size.height * 0.03),
-            AlreadyHaveAnAccountCheck(
-              login: false,
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return LoginScreen();
-                    },
+      child: SizedBox(
+        width: double.infinity,
+        child: Padding(
+          padding:
+              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: SizeConfig.screenHeight * 0.04), // 4%
+                Text(
+                  "Cadastre-se",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: getProportionateScreenWidth(28),
+                    color: AmeMaisColors.roxo,
+                    fontWeight: FontWeight.bold,
                   ),
-                );
-              },
-            ),
-            OrDivider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SocalIcon(
-                  iconSrc: "assets/icons/facebook.svg",
-                  press: () {},
                 ),
-                SocalIcon(
-                  iconSrc: "assets/icons/google-plus.svg",
-                  press: () {},
+                Text(
+                  "Complete seu cadastro ou faça Login com \n Google ou Facebook",
+                  textAlign: TextAlign.center,
                 ),
+                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image.asset('assets/images/ame_icon.png'),
+                ),
+                SignUpForm(),
+                SizedBox(height: SizeConfig.screenHeight * 0.08),
+                AlreadyHaveAnAccountCheck(
+                  login: false,
+                  press: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return LoginScreen();
+                        },
+                      ),
+                    );
+                  },
+                ),
+                OrDivider(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SocalIcon(
+                      iconSrc: "assets/icons/facebook.svg",
+                      press: () {},
+                    ),
+                    SocalIcon(
+                      iconSrc: "assets/icons/google-plus.svg",
+                      press: () {},
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: getProportionateScreenHeight(20)),
+                Text(
+                  'Para continuar você tem que aceitar \n nossos termos e condições',
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.caption,
+                )
               ],
-            )
-          ],
+            ),
+          ),
         ),
       ),
     );
