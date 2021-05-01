@@ -1,3 +1,4 @@
+import 'package:amemais/Screens/sobre_aleitamento/sobre_aleitamento_screen.dart';
 import 'package:amemais/components/rounded_button.dart';
 import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/material.dart';
@@ -209,7 +210,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             text: "Continue",
             press: () {
               if (_formKey.currentState.validate()) {
-                // Navigator.pushNamed(context, OtpScreen.routeName);
+                Navigator.pushNamed(context, SobreAleitamentoScreen.routeName);
               }
             },
           ),

@@ -94,7 +94,7 @@ class _SobreOBebeFormState extends State<SobreOBebeForm> {
           buildFirstNameFormField(),
           SizedBox(height: getProportionateScreenHeight(20)),
           buildIdadeField(),
-          SizedBox(height: getProportionateScreenHeight(20)),
+          SizedBox(height: getProportionateScreenHeight(10)),
           buildSexoField(),
           SizedBox(height: getProportionateScreenHeight(30)),
           buildPesoFormField(),
@@ -121,7 +121,7 @@ class _SobreOBebeFormState extends State<SobreOBebeForm> {
   DropDownField buildIdadeField() {
     return DropDownField(
       controller: idadeSelected,
-      hintText: "Idade do Bebê em Meses",
+      hintText: "Meses do Bebê",
       enabled: true,
       required: true,
       itemsVisibleInDropdown: 5,

@@ -4,6 +4,8 @@
 
 // import 'dart:js';
 
+import 'package:amemais/Screens/sobre_aleitamento/sobre_aleitamento_screen.dart';
+import 'package:amemais/Screens/sobre_bebe/sobre_bebe_screen.dart';
 import 'package:amemais/Screens/termo_consentimento/termo_consentimento_screen.dart';
 import 'package:amemais/Screens/Login/login_screen.dart';
 import 'package:amemais/Screens/Signup/signup_screen.dart';
@@ -21,4 +23,6 @@ final Map<String, WidgetBuilder> routes = {
   AnamneseScreen.routeName: (context) => AnamneseScreen(),
   TermoConsentimentoScreen.routeName: (context) => TermoConsentimentoScreen(),
   AceitacaoTermosScreen.routeName: (context) => AceitacaoTermosScreen(),
+  SobreAleitamentoScreen.routeName: (context) => SobreAleitamentoScreen(),
+  SobreOBebeScreen.routeName: (context) => SobreOBebeScreen(),
 };
