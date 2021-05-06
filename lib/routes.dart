@@ -15,6 +15,10 @@ import 'package:amemais/Screens/anamnese/anamnese_screen.dart';
 import 'package:amemais/Screens/forgot_password/forgot_password_screen.dart';
 import 'package:amemais/Screens/aceitacao_termos/aceitacao_termos_screen.dart';
 
+import 'Screens/details/details_screen.dart';
+import 'Screens/home/home_screen.dart';
+import 'Screens/profile/profile_screen.dart';
+
 final Map<String, WidgetBuilder> routes = {
   WelcomeScreen.routeName: (context) => WelcomeScreen(),
   LoginScreen.routeName: (context) => LoginScreen(),
@@ -25,4 +29,7 @@ final Map<String, WidgetBuilder> routes = {
   AceitacaoTermosScreen.routeName: (context) => AceitacaoTermosScreen(),
   SobreAleitamentoScreen.routeName: (context) => SobreAleitamentoScreen(),
   SobreOBebeScreen.routeName: (context) => SobreOBebeScreen(),
+  HomeScreen.routeName: (context) => HomeScreen(),
+  DetailsScreen.routeName: (context) => DetailsScreen(),
+  ProfileScreen.routeName: (context) => ProfileScreen(),
 };

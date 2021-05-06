@@ -1,6 +1,10 @@
 import 'package:amemais/Screens/Login/components/social_icon.dart';
 import 'package:amemais/Screens/anamnese/anamnese_screen.dart';
+import 'package:amemais/Screens/details/details_screen.dart';
 import 'package:amemais/Screens/forgot_password/forgot_password_screen.dart';
+import 'package:amemais/Screens/home/home_screen.dart';
+import 'package:amemais/Screens/profile/profile_screen.dart';
+// import 'package:amemais/Screens/home/home_screen.dart';
 import 'package:amemais/Screens/termo_consentimento/termo_consentimento_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:amemais/Screens/Login/components/background.dart';
@@ -71,8 +75,7 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "Login",
               press: () {
-                Navigator.pushNamed(
-                    context, TermoConsentimentoScreen.routeName);
+                Navigator.pushNamed(context, HomeScreen.routeName);
               },
             ),
 
